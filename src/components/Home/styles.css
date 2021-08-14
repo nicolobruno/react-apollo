@@ -1,0 +1,13 @@
+.container-countries {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-countries .country {
+    margin: 10px 0px;
+    color: gray;
+}
+
+.container-countries .country:hover {
+    color: black;
+}

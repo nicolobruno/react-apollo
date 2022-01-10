@@ -1,0 +1,29 @@
+.container-general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.container-general .title {
+    margin: 50px 0px 50px;
+    color: #212121;
+    font-size: 28px;
+    text-align: center;
+}
+
+.container-general .messageNoResults {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.container-characters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 100%;
+}
+

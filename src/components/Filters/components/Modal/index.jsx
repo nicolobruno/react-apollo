@@ -8,7 +8,7 @@ const FILTER_SPECIES = 'species';
 
 const ModalFilter = ({  handleSubmitSearch, handleOnChangeName, handleOnChangeSpecies }) => {
     const [isOpen, setOpenModal] = useState(false)
-    const [ state, dispatch ] = useGlobalValue()
+    const [ state ] = useGlobalValue()
 
     const handleOnSubmit = (event) => {
         const filterName = event.target[FILTER_NAME].value;

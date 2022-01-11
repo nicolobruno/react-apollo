@@ -2,10 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Countries of the world
-
-![all text](https://user-images.githubusercontent.com/28309103/129461008-4e48cb55-9e22-4d4b-880b-59eac7950a1a.gif)
-Using api countries https://github.com/trevorblades/countries
+Available in https://react-apollo.vercel.app/characters
 
 ## Available Scripts
 

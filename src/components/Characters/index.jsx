@@ -54,7 +54,7 @@ const Characters = () => {
                     </div>
                 </InfiniteScroll>
             )}
-            {items && items.length === 0 && !loading && <span className="messageNoResults">Ups !! Try again !</span>}
+            {items && items.length === 0 && !loading && <span className="messageNoResults">Ups !! Try again !!</span>}
         </div>
     )
 }

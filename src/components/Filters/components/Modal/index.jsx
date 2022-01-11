@@ -44,7 +44,7 @@ const ModalFilter = ({  handleSubmitSearch, handleOnChangeName, handleOnChangeSp
                                 type="text"
                                 id={FILTER_SPECIES}
                                 defaultValue={state.filters && state.filters.species}
-                                placeholder="Search by Species"
+                                placeholder="Search by Species..."
                                 className="field"
                             />
                         </div>

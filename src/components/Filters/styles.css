@@ -23,7 +23,7 @@ input {
     height: 50px;
     border-radius: 25px;
     width: 120px;
-    border: solid 3px #FF452B;
+    border: solid 2px #FF452B;
     font-size: 18px;
     background-color: transparent;
     font-weight: 600;
@@ -60,13 +60,14 @@ input {
     margin-right: 10px;
     font-size: 20px;
     font-weight: 600;
-    color: red;
+    color: #ff452b;
 }
 
 .ReactModal__Content {
     width: 50%;
-    height: 350px;
+    height: 300px;
     margin: 0 auto;
+    border-radius: 25px !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -81,7 +82,7 @@ input {
     .searchForm .field {
         height: 25px;
         width: 230px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .buttonFilter {
@@ -91,22 +92,32 @@ input {
     }
 
     .containerFilters .text {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .containerFilters .filterBy {
         font-size: 16px;
         width: 110px;
+        \-webkit-box-orient: vertical !important;
+        display: -webkit-box;
+        overflow: hidden;
+        word-break: break-all;
+        -webkit-line-clamp: 1;
     }
 
     .containerFilters {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
     }
 
     .filters {
         display: flex;
         margin-bottom: 10px;
+        align-items: center;
+    }
+
+    .containerModal .title {
+        font-size: 25px;
     }
   }

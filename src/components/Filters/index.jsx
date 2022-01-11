@@ -21,7 +21,7 @@ const Search = ({
   return (
     <div className="containerFilters">
       <div className="filters">
-        {filteByWithText && <span className="text">Filtrando por:</span>}
+        {filteByWithText && <span className="text">Filter by:</span>}
         <span className="filterBy">{filteByWithText}</span>
       </div>
       <ModalFilters handleOnChangeSpecies={handleOnChangeSpecies} handleSubmitSearch={handleSubmitSearch} filterBy={filterBy} />

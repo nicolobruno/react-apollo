@@ -1,16 +1,27 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import ReactModal from 'react-modal';
 
-import { useGlobalValue } from '../../../../context'
+import { GlobalContext } from '../../../../context'
 
 const FILTER_NAME = 'name';
 const FILTER_SPECIES = 'species';
 
-const ModalFilter = ({  handleSubmitSearch, handleOnChangeName, handleOnChangeSpecies }) => {
-    const [isOpen, setOpenModal] = useState(false)
-    const [ state ] = useGlobalValue()
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+      overflow: 'hidden'
+    },
+  };
 
-    const handleOnSubmit = (event) => {
+const ModalFilter:React.FC<any> = ({ handleSubmitSearch }) => {
+    const [isOpen, setOpenModal] = useState(false)
+    const { state } = useContext(GlobalContext);
+
+    const handleOnSubmit = (event: any) => {
         const filterName = event.target[FILTER_NAME].value;
         const filterSpecie = event.target[FILTER_SPECIES].value;
         handleSubmitSearch({ name: filterName, species: filterSpecie })
@@ -25,6 +36,7 @@ const ModalFilter = ({  handleSubmitSearch, handleOnChangeName, handleOnChangeSp
                 isOpen={isOpen}
                 onRequestClose={() => setOpenModal(false)}
                 ariaHideApp={false}
+                style={customStyles}
             >
                 <div>
                     <form

@@ -3,21 +3,20 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { useReducer } from 'react';
+import React from 'react';
 import './App.css';
 import Characters from './components/Characters'
-import { GlobalContext, globalState } from './context'
-import  { globalReducer } from './context/reducer'
+import { AppProvider } from './context'
 
 function App() {
   return (  
-    <GlobalContext.Provider value={useReducer(globalReducer, globalState)} >
+    <AppProvider>
       <Router>
         <Switch>
           <Route path="/characters" component={Characters} />
         </Switch>
       </Router>
-  </GlobalContext.Provider>
+  </AppProvider>
   );
 }
 

@@ -17,6 +17,10 @@ export const GET_CHARACTERS = gql `
           dimension
         }
       }
+      info {
+        count
+        pages
+      }
     }
   }
 `;

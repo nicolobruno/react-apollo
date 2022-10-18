@@ -9,7 +9,7 @@ import Loader from '../Loader';
 import { GlobalContext } from '../../context';
 import { Actions } from '../../context/actions';
 import { FilterType } from '../../context/reducer';
-import logo from '../../public/images/logo.png';
+import logo from '../../images/logo.png';
 
 import './styles.css';
 

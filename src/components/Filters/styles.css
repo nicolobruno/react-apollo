@@ -5,34 +5,81 @@
 
 }
 
-.searchForm .field {
-    height: 35px;
-    width: 300px;
-    border-radius: 40px;
-    padding: 8px 12PX;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    font-size: 20px;
+.input-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 280px;
+    margin-bottom: 30px;
 }
 
-input {
-    outline-color: #FF452B;
+.field {
+    height: 25px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border-bottom: 1px solid lightgray;
+    transition: border-bottom .8s ease-in-out;
+}
+
+.input-label::after {
+    content: '';
+    display: block;
+    background: red;
+    position: absolute;
+    top: 28px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform .7s ease-in-out;
+}
+
+.field:focus {
+    border-bottom: none;
+}
+
+.field:focus + .input-label::after {
+    transform: scaleX(1);
+}
+
+.field:focus + .input-label .input-label-name {
+    transform: translateY(-42px);
+    font-weight: 800;
+}
+
+.input-label-name {
+    transition: transform .7s ease-in-out;
+    position: absolute;
+    transform: translateY(-38px);
+    width: 100%;
+    font-size: 13px;
+    color: red;
 }
 
 .buttonFilter {
-    height: 50px;
+    height: 40px;
     border-radius: 25px;
-    width: 120px;
-    border: solid 2px #FF452B;
+    width: 100px;
+    border: solid 2px lightcoral;
     font-size: 18px;
-    background-color: transparent;
-    font-weight: 600;
-    color: #616161;
+    background-color: rgba(255, 69, 43, 0.1);
+    font-weight: 500;
+    color: lightcoral;
     outline: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px;
+    transition: box-shadow 1s ease-in-out;
+    font-family: sans-serif;
 }
 
 .buttonFilter:hover {
-    background-color: rgba(255, 69, 43, 0.1);
+    border: none;
+    color: #FF452B;
+    animation: xenon .5s infinite alternate;
 }
 
 .containerModal {
@@ -42,21 +89,26 @@ input {
 .containerModal .title {
     margin-bottom: 50px;
     margin-top: 0px;
+    font-size: 22px;
 }
 
-.containerFilters {
+.containerSearch {
     margin-bottom: 30px;
     display: flex;
     align-items: center;
 }
 
-.containerFilters .text {
+.containerSearch .text {
     margin-right: 10px;
     font-size: 19px;
     font-weight: 500;
 }
 
-.containerFilters .filterBy {
+.containerSearch .filters {
+    margin-right: 10px;
+}
+
+.containerSearch .filterBy {
     margin-right: 10px;
     font-size: 20px;
     font-weight: 600;
@@ -65,7 +117,8 @@ input {
 
 .ReactModal__Content {
     width: 50%;
-    height: 300px;
+    max-width: 600px;
+    height: 400px;
     margin: 0 auto;
     border-radius: 25px !important;
 }
@@ -76,7 +129,8 @@ input {
         height: 380px;
         max-width: 320px;
         padding: 10px !important;
-        inset: 0px !important;
+        inset: 30px !important;
+        transform: translate(0, 30%);
     }
 
     .searchForm .field {
@@ -91,11 +145,11 @@ input {
         width: 100px;
     }
 
-    .containerFilters .text {
+    .containerSearch .text {
         font-size: 15px;
     }
 
-    .containerFilters .filterBy {
+    .containerSearch .filterBy {
         font-size: 16px;
         width: 110px;
         \-webkit-box-orient: vertical !important;
@@ -105,13 +159,13 @@ input {
         -webkit-line-clamp: 1;
     }
 
-    .containerFilters {
+    .containerSearch {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .filters {
+    .containerFilters {
         display: flex;
         margin-bottom: 10px;
         align-items: center;
@@ -121,3 +175,17 @@ input {
         font-size: 25px;
     }
   }
+
+  @keyframes xenon {
+    0% {
+        box-shadow: 0 2px 15px;
+    }
+
+    50% {
+        box-shadow: 0 3px 18px;
+    }
+
+    100% {
+        box-shadow: 0 5px 20px;
+    }
+}

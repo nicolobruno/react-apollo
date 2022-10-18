@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px;
+    padding: 20px 20px;
 }
 
-.container-general .title {
-    margin: 50px 0px 50px;
-    color: #212121;
-    font-size: 28px;
-    text-align: center;
+.container-general .logo {
+    width: 350px;
+    margin: 20px 0;
+    animation: logo-initial .7s ease-in-out, logo-up-to-down 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) .6s, logo-rigth-to-left 4s cubic-bezier(0.18, 0.89, 0.32, 1.28) 4.5s infinite;
+    transition: transform 2s ease-in-out;
+    cursor: pointer;
 }
 
 .container-general .messageNoResults {
@@ -22,8 +23,66 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 1350px;
+    max-width: 1420px;
     margin: 0 auto;
     width: 100%;
+    justify-content: center;
 }
 
+@keyframes logo-initial {
+    to {
+        transform: translateY(0px);
+    }
+
+    from {
+        transform: translateY(-180px);
+    }
+}
+
+@keyframes logo-up-to-down {
+    0% {
+        transform: translateY(0px);
+    }
+
+    20% {
+        transform: translateY(-25px);
+    }
+
+    40% {
+        transform: translateY(14px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+
+    80% {
+        transform: translateY(8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes logo-rigth-to-left {
+    0% {
+        transform: translatex(0px);
+    }
+
+    5% {
+        transform: translatex(30px);
+    }
+
+    8% {
+        transform: translatex(-30px);
+    }
+
+    12% {
+        transform: translatex(30px);
+    }
+    
+    15%, 100% {
+        transform: translatex(0px);
+    }
+}

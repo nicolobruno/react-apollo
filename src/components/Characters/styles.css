@@ -8,7 +8,7 @@
 .container-general .logo {
     width: 350px;
     margin: 20px 0;
-    animation: logo-initial .7s ease-in-out, logo-up-to-down 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) .6s, logo-rigth-to-left 4s cubic-bezier(0.18, 0.89, 0.32, 1.28) 5s infinite;
+    animation: logo-initial .7s ease-in-out, logo-up-to-down 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) .6s, logo-rigth-to-left 4s cubic-bezier(0.18, 0.89, 0.32, 1.28) 4.5s infinite;
     transition: transform 2s ease-in-out;
     cursor: pointer;
 }
@@ -26,12 +26,7 @@
     max-width: 1420px;
     margin: 0 auto;
     width: 100%;
-}
-
-@media only screen and (max-width: 800px) {
-    .container-characters {
-        justify-content: center;
-    }
+    justify-content: center;
 }
 
 @keyframes logo-initial {

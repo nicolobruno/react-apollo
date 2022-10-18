@@ -45,20 +45,29 @@ const ModalFilter:React.FC<any> = ({ handleSubmitSearch }) => {
                     >   
                         <div className="containerModal">
                             <h1 className="title">Apply Filters</h1>
-                            <input
-                                type="text"
-                                id={FILTER_NAME}
-                                defaultValue={state.filters && state.filters.name}
-                                placeholder="Search by Name..."
-                                className="field"
-                            />
-                            <input
-                                type="text"
-                                id={FILTER_SPECIES}
-                                defaultValue={state.filters && state.filters.species}
-                                placeholder="Search by Species..."
-                                className="field"
-                            />
+                            <div className="input-container">
+                                <input
+                                    type="text"
+                                    id={FILTER_NAME}
+                                    defaultValue={state.filters && state.filters.name}
+                                    className="field"
+                                />
+                                <label htmlFor="name" className="input-label"> 
+                                    <span className="input-label-name">Name</span> 
+                                </label>
+                            </div>
+                            <div className="input-container">
+                                <input
+                                    type="text"
+                                    id={FILTER_SPECIES}
+                                    defaultValue={state.filters && state.filters.species}
+                                    className="field"
+                                />
+                                <label htmlFor="species" className="input-label"> 
+                                    <span className="input-label-name">Species</span> 
+                                </label>
+                            </div>
+                            
                         </div>
                         <button className="buttonFilter" type="submit">Apply</button>
                     </form> 

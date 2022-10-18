@@ -29,15 +29,19 @@ const Characters = () => {
        return data && (page < data.characters.info.pages);
     }
 
+    const resetFilters = () => {
+        dispatch({ type: Actions.Set, payload: { filters: { name: '', species: '' }}});
+        setPage(1);
+    }
+
     const handleOnClick = (filters: FilterType) => {
-        dispatch({ type: Actions.Set, payload: { filters }})
-        setItems([])
-        setPage(1)
+        dispatch({ type: Actions.Set, payload: { filters }});
+        setPage(1);
     }
     
     return (
         <div className="container-general">
-            <img src={logo} className="logo" alt="logo Ricky and Morty" />
+            <img src={logo} className="logo" alt="logo Ricky and Morty" onClick={resetFilters} />
             <Filters handleOnClick={handleOnClick} filters={state.filters} />
             {items && items.length > 0 && (
                 <InfiniteScroll

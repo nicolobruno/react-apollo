@@ -52,7 +52,7 @@
 }
 
 .input-label-name {
-    transition: transform .7s ease-in-out;
+    transition: transform .4s ease;
     position: absolute;
     transform: translateY(-38px);
     width: 100%;

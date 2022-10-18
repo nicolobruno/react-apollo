@@ -17,7 +17,7 @@ const Characters = () => {
     const { state, dispatch } = useContext(GlobalContext);
     const [ page, setPage ] = useState<number>(1);
     const [ items, setItems ] = useState<CharacterType[] | []>([])
-    const { data, loading } = useQuery(GET_CHARACTERS, { variables: { page: page, filter: { ...state.filters }}}); 
+    const { data, loading } = useQuery(GET_CHARACTERS, { variables: { page: page, filter: { ...state.filters }}});
 
     useEffect(() => {
         if (data && data.characters.results) {
@@ -31,11 +31,13 @@ const Characters = () => {
 
     const resetFilters = () => {
         dispatch({ type: Actions.Set, payload: { filters: { name: '', species: '' }}});
+        setItems([]);
         setPage(1);
     }
 
     const handleOnClick = (filters: FilterType) => {
         dispatch({ type: Actions.Set, payload: { filters }});
+        setItems([]);
         setPage(1);
     }
     

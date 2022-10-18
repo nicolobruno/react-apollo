@@ -13,6 +13,7 @@ function App() {
     <AppProvider>
       <Router>
         <Switch>
+          <Route path="/" component={Characters} />
           <Route path="/characters" component={Characters} />
         </Switch>
       </Router>

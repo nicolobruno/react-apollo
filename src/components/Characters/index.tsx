@@ -30,9 +30,11 @@ const Characters = () => {
     }
 
     const resetFilters = () => {
-        dispatch({ type: Actions.Set, payload: { filters: { name: '', species: '' }}});
-        setItems([]);
-        setPage(1);
+        if (state.filters && (state.filters.name !== "" || state.filters.species !== "")) {
+            dispatch({ type: Actions.Set, payload: { filters: { name: '', species: '' }}});
+            setItems([]);
+            setPage(1);
+        }
     }
 
     const handleOnClick = (filters: FilterType) => {

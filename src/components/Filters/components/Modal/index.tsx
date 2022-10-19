@@ -1,21 +1,8 @@
-import React, { Fragment, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactModal from 'react-modal';
 
-import { GlobalContext } from '../../../../context'
-
-const FILTER_NAME = 'name';
-const FILTER_SPECIES = 'species';
-
-const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      overflow: 'hidden'
-    },
-  };
+import { GlobalContext } from '../../../../context';
+import { FILTER_NAME, FILTER_SPECIES, CUTOMS_STYLES } from './constants';
 
 const ModalFilter:React.FC<any> = ({ handleSubmitSearch }) => {
     const [isOpen, setOpenModal] = useState(false)
@@ -30,13 +17,13 @@ const ModalFilter:React.FC<any> = ({ handleSubmitSearch }) => {
     }
 
     return (
-        <Fragment>
+        <>
             <button className="buttonFilter" onClick={() => setOpenModal(true)}>Filters</button>
             <ReactModal 
                 isOpen={isOpen}
                 onRequestClose={() => setOpenModal(false)}
                 ariaHideApp={false}
-                style={customStyles}
+                style={CUTOMS_STYLES}
             >
                 <div>
                     <form
@@ -73,7 +60,7 @@ const ModalFilter:React.FC<any> = ({ handleSubmitSearch }) => {
                     </form> 
                 </div>
             </ReactModal>
-        </Fragment>
+        </>
     )
 }
 

@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { GET_CHARACTERS } from '../../queries';
-import { Character, CharacterType } from '../Character'
+import { Character, CharacterType } from '../Character';
 import Filters from '../Filters';
 import Loader from '../Loader';
 import { GlobalContext } from '../../context';
@@ -17,7 +17,7 @@ const Characters = () => {
     const { state, dispatch } = useContext(GlobalContext);
     const [ page, setPage ] = useState<number>(1);
     const [ items, setItems ] = useState<CharacterType[] | []>([])
-    const { data, loading } = useQuery(GET_CHARACTERS, { variables: { page: page, filter: { ...state.filters }}}); 
+    const { data, loading } = useQuery(GET_CHARACTERS, { variables: { page: page, filter: { ...state.filters }}});
 
     useEffect(() => {
         if (data && data.characters.results) {
@@ -30,12 +30,16 @@ const Characters = () => {
     }
 
     const resetFilters = () => {
-        dispatch({ type: Actions.Set, payload: { filters: { name: '', species: '' }}});
-        setPage(1);
+        if (state.filters && (state.filters.name !== "" || state.filters.species !== "")) {
+            dispatch({ type: Actions.Set, payload: { filters: { name: '', species: '' }}});
+            setItems([]);
+            setPage(1);
+        }
     }
 
     const handleOnClick = (filters: FilterType) => {
         dispatch({ type: Actions.Set, payload: { filters }});
+        setItems([]);
         setPage(1);
     }
     

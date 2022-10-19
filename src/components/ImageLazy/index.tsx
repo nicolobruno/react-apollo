@@ -9,14 +9,14 @@ interface ImageLazyType {
   delayTime: number
 }
  
-const ImageLazy: React.FC<ImageLazyType> = ({ src, alt, className, delayTime }) => (
+const ImageLazy= ({ src, alt, className, delayTime } : ImageLazyType) => (
   <LazyLoadImage
     alt={alt}
     effect="blur"
     src={src}
     className={className}
     delayTime={delayTime}
-    />
+  />
 );
 
 export default ImageLazy;

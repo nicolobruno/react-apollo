@@ -1,9 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import ModalFilters from './components/Modal'
-import './styles.css'
+import ModalFilters from './components/Modal';
+import './styles.css';
 
-const Search:React.FC<any> = ({ handleOnClick, filters }) => {
+type Props = {
+  handleOnClick: Function,
+  filters?: FilterType
+}
+
+type FilterType = {
+  name: string,
+  species: string
+};
+
+const Search = ({ handleOnClick, filters } : Props) => {
 
   const handleSubmitSearch = (filters: any) => {
     handleOnClick(filters);

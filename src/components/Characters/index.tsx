@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { GET_CHARACTERS } from '../../queries';
-import { Character, CharacterType } from '../Character'
+import { Character, CharacterType } from '../Character';
 import Filters from '../Filters';
 import Loader from '../Loader';
 import { GlobalContext } from '../../context';

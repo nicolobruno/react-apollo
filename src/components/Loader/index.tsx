@@ -9,7 +9,7 @@ interface LoaderType {
     loading: boolean
 }
 
-const Loader: React.FC<LoaderType> = ({ size, color, loading }) => {
+const Loader = ({ size, color, loading } : LoaderType) => {
     return (
         <div className="container-loader">
             <BeatLoader color={color} loading={loading} size={size} />

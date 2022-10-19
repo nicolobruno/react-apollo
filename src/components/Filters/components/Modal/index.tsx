@@ -4,7 +4,11 @@ import ReactModal from 'react-modal';
 import { GlobalContext } from '../../../../context';
 import { FILTER_NAME, FILTER_SPECIES, CUTOMS_STYLES } from './constants';
 
-const ModalFilter:React.FC<any> = ({ handleSubmitSearch }) => {
+type Props = {
+    handleSubmitSearch: Function
+}
+
+const ModalFilter = ({ handleSubmitSearch } : Props) => {
     const [isOpen, setOpenModal] = useState(false)
     const { state } = useContext(GlobalContext);
 

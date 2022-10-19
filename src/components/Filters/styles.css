@@ -129,7 +129,7 @@
         height: 380px;
         max-width: 320px;
         padding: 10px !important;
-        inset: 30px !important;
+        inset: 50% auto auto 50%;
         transform: translate(0, 30%);
     }
 

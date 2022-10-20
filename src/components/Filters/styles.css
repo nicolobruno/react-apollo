@@ -1,7 +1,7 @@
 .searchForm {
     display: flex;
     flex-direction: column;
-    margin: 20px 0px 40px;
+    margin: 20px;
 
 }
 
@@ -135,8 +135,9 @@
 
     .searchForm .field {
         height: 25px;
-        width: 230px;
         font-size: 16px;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .buttonFilter {

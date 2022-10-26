@@ -16,16 +16,15 @@
 }
 
 .container-character .container-card {
-    width: 200px;
+    width: 220px;
     height: 390px;
-    border: 2px solid lightcoral;
     border-radius: 40px;
-    padding: 10px 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 69, 43, 0.1);
     box-shadow: 6px 6px 12px;
+    cursor: pointer;
 }
 
 .container-character .container-name .name {
@@ -40,13 +39,15 @@
     margin-bottom: 8px;
     color: lightcoral;
     font-size: 20px;
+    animation: moving-card-title 4s cubic-bezier(0.18, 0.89, 0.32, 1.28) 4.5s infinite;
+    transition: transform .1s;
 }
 
 .container-character .item {
     margin-bottom: 5px;
     color: #616161;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .container-character .item-origin {
@@ -61,20 +62,43 @@
 }
 
 .container-character .picture {
-    margin-top: 10px ;
     width: 100%;
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-bottom: 5px;
 }
 
 .container-body {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     height: 100px;
 }
 
 @media only screen and (max-width: 800px) {
     .container-character .container-card {
         width: 240px;
+    }
+}
+
+@keyframes moving-card-title {
+    0% {
+        transform: translatex(0px);
+    }
+
+    5% {
+        transform: translatex(30px);
+    }
+
+    8% {
+        transform: translatex(-30px);
+    }
+
+    12% {
+        transform: translatex(30px);
+    }
+    
+    15%, 100% {
+        transform: translatex(0px);
     }
 }

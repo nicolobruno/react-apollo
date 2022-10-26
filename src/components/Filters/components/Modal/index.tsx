@@ -3,6 +3,7 @@ import ReactModal from 'react-modal';
 
 import { GlobalContext } from '../../../../context';
 import { FILTER_NAME, FILTER_SPECIES, CUTOMS_STYLES } from './constants';
+import { useForm } from '../../../../hooks/useForm';
 
 type Props = {
     handleSubmitSearch: Function
@@ -11,13 +12,11 @@ type Props = {
 const ModalFilter = ({ handleSubmitSearch } : Props) => {
     const [isOpen, setOpenModal] = useState(false)
     const { state } = useContext(GlobalContext);
+    const { dataForm, handleOnDataForm } = useForm({});
 
-    const handleOnSubmit = (event: any) => {
-        const filterName = event.target[FILTER_NAME].value;
-        const filterSpecie = event.target[FILTER_SPECIES].value;
-        handleSubmitSearch({ name: filterName, species: filterSpecie })
-        setOpenModal(false)
-        event.preventDefault()
+    const handleOnSubmit = () => {
+        handleSubmitSearch(dataForm);
+        setOpenModal(false);
     }
 
     return (
@@ -31,7 +30,7 @@ const ModalFilter = ({ handleSubmitSearch } : Props) => {
             >
                 <div>
                     <form
-                        onSubmit={event => handleOnSubmit(event)}
+                        onSubmit={handleOnSubmit}
                         className="searchForm"
                     >   
                         <div className="containerModal">
@@ -42,6 +41,7 @@ const ModalFilter = ({ handleSubmitSearch } : Props) => {
                                     id={FILTER_NAME}
                                     defaultValue={state.filters && state.filters.name}
                                     className="field"
+                                    onChange={(e) => handleOnDataForm(FILTER_NAME, e.target.value)}
                                 />
                                 <label htmlFor="name" className="input-label"> 
                                     <span className="input-label-name">Name</span> 
@@ -53,6 +53,7 @@ const ModalFilter = ({ handleSubmitSearch } : Props) => {
                                     id={FILTER_SPECIES}
                                     defaultValue={state.filters && state.filters.species}
                                     className="field"
+                                    onChange={(e) => handleOnDataForm(FILTER_SPECIES, e.target.value)}
                                 />
                                 <label htmlFor="species" className="input-label"> 
                                     <span className="input-label-name">Species</span> 

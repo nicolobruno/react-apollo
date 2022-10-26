@@ -61,13 +61,12 @@
 }
 
 .buttonFilter {
-    height: 40px;
-    border-radius: 25px;
-    width: 100px;
+    height: 45px;
+    width: 120px;
     border: solid 2px lightcoral;
     font-size: 18px;
     background-color: rgba(255, 69, 43, 0.1);
-    font-weight: 500;
+    font-weight: 600;
     color: lightcoral;
     outline: none;
     cursor: pointer;

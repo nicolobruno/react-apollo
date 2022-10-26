@@ -10,7 +10,7 @@
     flex-direction: column;
     position: relative;
     max-width: 280px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .field {
@@ -47,16 +47,16 @@
 }
 
 .field:focus + .input-label .input-label-name {
-    transform: translateY(-42px);
+    transform: translateY(-45px);
     font-weight: 800;
 }
 
 .input-label-name {
     transition: transform .4s ease;
     position: absolute;
-    transform: translateY(-38px);
+    transform: translateY(-42px);
     width: 100%;
-    font-size: 13px;
+    font-size: 15px;
     color: red;
 }
 
@@ -73,6 +73,7 @@
     box-shadow: 3px 3px 6px;
     transition: box-shadow 1s ease-in-out;
     font-family: sans-serif;
+    margin: 0 auto;
 }
 
 .buttonFilter:hover {
@@ -81,9 +82,6 @@
     animation: xenon .5s infinite alternate;
 }
 
-.containerModal {
-    margin-bottom: 40px;
-}
 
 .containerModal .title {
     margin-bottom: 50px;
@@ -117,7 +115,7 @@
 .ReactModal__Content {
     width: 50%;
     max-width: 600px;
-    height: 400px;
+    height: 300px;
     margin: 0 auto;
     border-radius: 25px !important;
 }
@@ -125,7 +123,7 @@
 @media only screen and (max-width: 600px) {
     .ReactModal__Content {
         width: 100%;
-        height: 380px;
+        height: 300px;
         max-width: 320px;
         padding: 10px !important;
         inset: 50% auto auto 50%;

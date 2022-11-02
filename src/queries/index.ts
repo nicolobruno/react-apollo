@@ -24,3 +24,21 @@ export const GET_CHARACTERS = gql `
     }
   }
 `;
+
+export const GET_CHARACTER_BY_IDS = gql `
+  query getCharactersByIds($ids: [ID!]!) {
+    charactersByIds(ids: $ids) {
+      id
+      name
+      status
+      gender
+      type
+      species
+      image
+      origin {
+        name
+        dimension
+      }
+    }
+  }
+`;

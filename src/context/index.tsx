@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer, Dispatch } from "react";
-import  { filterReducer, FilterActions, StateType } from './reducer'
+import  { filterReducer, FilterActions } from './reducer'
+import { StateType } from './types';
 
 const globalState = {
   filters: {

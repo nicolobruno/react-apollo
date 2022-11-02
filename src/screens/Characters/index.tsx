@@ -3,12 +3,13 @@ import { useQuery } from '@apollo/client';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { GET_CHARACTERS } from '../../queries';
-import { Character, CharacterType } from '../Character';
-import Filters from '../Filters';
-import Loader from '../Loader';
+import CharacterCard from '../../components/CharacterCard';
+import { CharacterType } from '../../components/CharacterCard/types';
+import Filters from '../../components/Filters';
+import Loader from '../../components/Loader';
 import { GlobalContext } from '../../context';
 import { Actions } from '../../context/actions';
-import { FilterType } from '../../context/reducer';
+import { FilterType } from '../../context/types';
 import logo from '../../images/logo.png';
 
 import './styles.css';
@@ -56,7 +57,7 @@ const Characters = () => {
                 >
                     <div className="container-characters">
                         {items.map((elem: CharacterType) => (
-                            <Character character={elem} />
+                            <CharacterCard character={elem} />
                         ))}
                     </div>
                 </InfiniteScroll>

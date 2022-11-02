@@ -79,7 +79,7 @@
 .buttonFilter:hover {
     border: none;
     color: #FF452B;
-    animation: xenon .5s infinite alternate;
+    animation: xenon .6s infinite alternate ease-in-out;
 }
 
 
@@ -179,11 +179,15 @@
         box-shadow: 0 2px 15px;
     }
 
-    50% {
-        box-shadow: 0 3px 18px;
+    30% {
+        box-shadow: 0 5px 16px;
+    }
+
+    70% {
+        box-shadow: 0 8px 18px;
     }
 
     100% {
-        box-shadow: 0 5px 20px;
+        box-shadow: 0 4px 18px;
     }
 }

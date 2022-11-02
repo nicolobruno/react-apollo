@@ -5,16 +5,18 @@ import {
 } from "react-router-dom";
 import React from 'react';
 import './App.css';
-import Characters from './components/Characters'
-import { AppProvider } from './context'
+import Characters from './screens/Characters';
+import Character from './screens/Character';
+import { AppProvider } from './context';
 
 function App() {
   return (  
     <AppProvider>
       <Router>
         <Switch>
-          <Route path="/" component={Characters} />
-          <Route path="/characters" component={Characters} />
+          <Route path="/" exact component={Characters} />
+          <Route path="/characters" exact component={Characters} />
+          <Route path="/character/:id" exact component={Character} />
         </Switch>
       </Router>
   </AppProvider>

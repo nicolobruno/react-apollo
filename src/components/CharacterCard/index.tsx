@@ -1,31 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import ImageLazy from '../ImageLazy'
+import ImageLazy from '../ImageLazy';
+import { Props } from './types';
 import './styles.css'
 
-export interface Props {
-    character: CharacterType
-};
-
-export interface CharacterType {
-    id: number,
-    name: string,
-    status: string,
-    species: string,
-    origin: Origin,
-    image: string
-};
-
-interface Origin {
-    name: string, 
-    dimension: string
-};
-
-export const Character = ({ character } : Props) => {
+const CharacterCard = ({ character } : Props) => {
     return (
-        <div className="container-character">
-            {character && (
-                <div className="container-card">
+        character && (
+            <div className="container-character-card">
+                <Link to={`/character/${character.id}`} className="container-card" style={{ textDecoration: 'none', color: 'gray' }}>
                     {character.image && (
                         <ImageLazy src={character.image} alt="character" className="picture" delayTime={0} />
                     )}
@@ -37,8 +21,10 @@ export const Character = ({ character } : Props) => {
                         <span className="item"><b>Origin: </b>{character.origin && character.origin.name}</span>
                         <span className="item"><b>Dimension: </b>{character.origin && character.origin.dimension}</span>
                     </div>
-                </div>
-            )}
-        </div>
+                </Link>
+            </div>
+        )
     )
 }
+
+export default CharacterCard;

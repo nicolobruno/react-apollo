@@ -1,0 +1,19 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #eff1f2;
+    padding: 0 20px;
+    height: 100vh;
+    box-shadow: 6px 6px 20px;
+    color: #eff1f2;
+}
+
+.back-arrow {
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.back-arrow:hover path {
+    stroke: lightcoral;
+}

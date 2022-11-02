@@ -1,5 +1,5 @@
 import React from "react"
-import BeatLoader from "react-spinners/BeatLoader";
+import BarLoader from "react-spinners/BarLoader";
 
 import './styles.css'
 
@@ -12,7 +12,7 @@ interface LoaderType {
 const Loader = ({ size, color, loading } : LoaderType) => {
     return (
         <div className="container-loader">
-            <BeatLoader color={color} loading={loading} size={size} />
+            <BarLoader color={color} loading={loading} height={6} />
         </div>
     )
 }

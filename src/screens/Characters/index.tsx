@@ -11,6 +11,7 @@ import { GlobalContext } from '../../context';
 import { Actions } from '../../context/actions';
 import { FilterType } from '../../context/types';
 import logo from '../../images/logo.png';
+import { LOGO_PRINCIPAL } from './constants';
 
 import './styles.css';
 
@@ -46,7 +47,7 @@ const Characters = () => {
     
     return (
         <div className="container-general">
-            <img src={logo} className="logo" alt="logo Ricky and Morty" onClick={resetFilters} />
+            <img src={logo} className="logo" alt="logo Ricky and Morty" data-testid={LOGO_PRINCIPAL} onClick={resetFilters} />
             <Filters handleOnClick={handleOnClick} filters={state.filters} />
             {items && items.length > 0 && (
                 <InfiniteScroll
